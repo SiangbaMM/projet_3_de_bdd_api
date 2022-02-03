@@ -1,0 +1,19 @@
+version: "3.9"
+services:
+        api_prjt3:
+                image: siangbamm/fastapi_prjt3:1.0.0
+                container_name: fastapi_prjt3
+                networks:
+                        - smm_prjt3_network
+                ports:
+                        - "8000:8000"
+        neo4j:
+                image: siangbamm/datascientest_neo4j:latest
+                container_name: neo4j_prjt3
+                networks:
+                        - smm_prjt3_network
+                ports:
+                        - "7474:7474"
+                        - "7687:7687"
+networks:
+        smm_prjt3_network:
